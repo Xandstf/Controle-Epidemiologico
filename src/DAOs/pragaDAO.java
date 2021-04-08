@@ -1,5 +1,6 @@
 package DAOs;
 
+import Entities.Local;
 import Entities.Praga;
 import java.util.ArrayList;
 
@@ -7,6 +8,12 @@ public class pragaDAO {
     public static ArrayList<Praga> pragaArrayList = new ArrayList();
 
     public static boolean incluirPraga(Praga praga) {
+        for (Praga pragasExistentes : pragaArrayList) {
+            if(pragasExistentes.getCodigo() == praga.getCodigo()){
+                System.out.println("\n** Este codigo já esta em uso no sistema!\n");
+                return false;
+            }
+        }
         return pragaArrayList.add(praga);
     }
     

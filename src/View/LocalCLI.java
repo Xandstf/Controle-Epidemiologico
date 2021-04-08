@@ -1,5 +1,7 @@
 package View;
 
+import UseCases.LocalUseCases.*;
+
 import java.util.Scanner;
 
 public class LocalCLI {
@@ -20,19 +22,19 @@ public class LocalCLI {
 
         switch (opcao){
             case "1":
-                System.out.println("1");
+                listarTodosLocal.listarTodos();
                 break;
             case "2":
-                System.out.println("2");
+                listarUmLocal.listarUm();
                 break;
             case "3":
-                System.out.println("3");
+                incluirLocal.incluir();
                 break;
             case "4":
-                System.out.println("4");
+                excluirLocal.excluir();
                 break;
             case "5":
-                System.out.println("5");
+                alterarLocal.alterar();
                 break;
             case "6":
                 break;

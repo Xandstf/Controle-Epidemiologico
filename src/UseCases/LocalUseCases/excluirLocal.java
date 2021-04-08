@@ -13,10 +13,16 @@ public class excluirLocal {
         System.out.printf("\nDigite o CEP do local que deseja excluir: ");
         String codigo = scanner.nextLine();
 
-        if(localDAO.excluirLocal(codigo)){
-            System.out.println("\n** Local excluida com sucesso!");
+        System.out.print("Você tem certeza que deseja excluir? (S/N): ");
+        String confirmacao = scanner.nextLine();
+        if(confirmacao.equals("S")){
+            if(localDAO.excluirLocal(codigo)){
+                System.out.println("\n** Local excluido com sucesso!");
+            }else{
+                System.out.println("\n** Local não encontrado. Liste todos para obter seus respectivos CEPs.");
+            }
         }else{
-            System.out.println("\n** Local não encontrado. Liste todos para obter seus respectivos CEPs.");
+            System.out.println("\n** Ação cancelada!");
         }
     }
 }

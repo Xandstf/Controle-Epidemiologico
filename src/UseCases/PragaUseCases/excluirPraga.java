@@ -26,4 +26,19 @@ public class excluirPraga {
             System.out.println("\n** Ação cancelada!");
         }
     }
+
+    public static void excluir(int codigoPraga, String confirmacaoPraga){
+        int codigo = codigoPraga;
+        String confirmacao = confirmacaoPraga;
+
+        if(confirmacao.equals("S")){
+            if(pragaDAO.excluirPraga(codigo)){
+                System.out.println("\n** Praga excluida com sucesso!");
+            }else{
+                System.out.println("\n** Praga não encontrada. Liste todas para obter seus respectivos codigos.");
+            }
+        }else{
+            System.out.println("\n** Ação cancelada!");
+        }
+    }
 }

@@ -48,4 +48,28 @@ public class alterarPraga {
             System.out.println("\n** Praga não encontrada. Liste todas para obter seus respectivos codigos.");
         }
     }
+
+    public static void alterar(int codigo, String opcao, String modificacao){
+
+        if(pragaDAO.listarUmPraga(codigo)!=null){
+            Praga praga = pragaDAO.listarUmPraga(codigo);
+            if(opcao.equals("nome")){
+                pragaDAO.pragaArrayList.get(pragaDAO.pragaArrayList.indexOf(praga)).setNome(modificacao);
+                System.out.print("\n** Nome atualizado com sucesso!\n");
+            }else if(opcao.equals("doenças transmitidas")){
+                pragaDAO.pragaArrayList.get(pragaDAO.pragaArrayList.indexOf(praga)).setDoencas_Transimitidas(modificacao);
+                System.out.print("\n** Doenças Transimitidas atualizadas com sucesso!\n");
+            }else if(opcao.equals("tempo de vida")){
+                pragaDAO.pragaArrayList.get(pragaDAO.pragaArrayList.indexOf(praga)).setTempo_Vida(modificacao);
+                System.out.print("\n** Tempo de Vida atualizado com sucesso!\n");
+            }else if(opcao.equals("modos de combate")){
+                pragaDAO.pragaArrayList.get(pragaDAO.pragaArrayList.indexOf(praga)).setModos_Combate(modificacao);
+                System.out.print("\n** Modo de Combate atualizado com sucesso!\n");
+            }else{
+                System.out.println("** Opção invalida! Digite um dos nomes dos atributos.");
+            }
+        }else{
+            System.out.println("\n** Praga não encontrada. Liste todas para obter seus respectivos codigos.");
+        }
+    }
 }

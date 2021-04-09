@@ -14,6 +14,21 @@ public class pragaDAO {
                 return false;
             }
         }
+
+        if(praga.getNome().equals("")
+                || praga.getModos_Combate().equals("")
+                || praga.getTempo_Vida().equals("")
+                || praga.getDoencas_Transimitidas().equals("")){
+            return false;
+        }
+
+        if(praga.getNome().isBlank()
+                || praga.getModos_Combate().isBlank()
+                || praga.getTempo_Vida().isBlank()
+                || praga.getDoencas_Transimitidas().isBlank()){
+            return false;
+        }
+
         return pragaArrayList.add(praga);
     }
     

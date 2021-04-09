@@ -1,5 +1,6 @@
 import DAOs.localDAO;
 import DAOs.pragaDAO;
+import Entities.Praga;
 import View.LocalCLI;
 import View.PragaCLI;
 

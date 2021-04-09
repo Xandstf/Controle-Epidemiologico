@@ -1,7 +1,6 @@
 package DAOs;
 
 import Entities.Local;
-
 import java.util.ArrayList;
 
 public class localDAO {
@@ -18,7 +17,7 @@ public class localDAO {
         if (local.getTelefone_defesaCivil() != null) {
             int length = local.getTelefone_defesaCivil().length();
             if (!local.getTelefone_defesaCivil().matches("^\\([1-9]{2}\\) (?:[2-8]|9[1-9])[0-9]{3}\\-[0-9]{4}$")) {
-                System.out.println("\n** Telefone em formato inválido. Jeito correto é: (xx) xxxxx-xxxx\n");
+                System.out.println("\n** Telefone em formato inválido. Jeito correto é: (xx) xxxx-xxxx\n");
                 return false;
             }
         }

@@ -1,6 +1,5 @@
 package DAOs;
 
-import Entities.Local;
 import Entities.Praga;
 import java.util.ArrayList;
 

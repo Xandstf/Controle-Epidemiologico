@@ -14,6 +14,23 @@ public class localDAO {
                 return false;
             }
         }
+
+        if (local.getTelefone_defesaCivil() != null) {
+            int length = local.getTelefone_defesaCivil().length();
+            if (!local.getTelefone_defesaCivil().matches("^\\([1-9]{2}\\) (?:[2-8]|9[1-9])[0-9]{3}\\-[0-9]{4}$")) {
+                System.out.println("\n** Telefone em formato inválido. Jeito correto é: (xx) xxxxx-xxxx\n");
+                return false;
+            }
+        }
+
+        if (local.getCEP_ponto_central() != null) {
+            int length = local.getCEP_ponto_central().length();
+            if (!local.getCEP_ponto_central().matches("^\\d{5}-\\d{3}$")) {
+                System.out.println("\n** CEP em formato inválido. Jeito correto é: xxxxx-xxx\n");
+                return false;
+            }
+        }
+
         return localArrayList.add(local);
     }
 

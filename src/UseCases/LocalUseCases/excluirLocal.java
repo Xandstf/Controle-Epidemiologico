@@ -25,4 +25,16 @@ public class excluirLocal {
             System.out.println("\n** Ação cancelada!");
         }
     }
+
+    public static void excluir(String codigo, String confirmacao){
+        if(confirmacao.equals("S")){
+            if(localDAO.excluirLocal(codigo)){
+                System.out.println("\n** Local excluido com sucesso!");
+            }else{
+                System.out.println("\n** Local não encontrado. Liste todos para obter seus respectivos CEPs.");
+            }
+        }else{
+            System.out.println("\n** Ação cancelada!");
+        }
+    }
 }

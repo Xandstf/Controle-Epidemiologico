@@ -5,22 +5,22 @@ import UseCases.LocalUseCases.*;
 import java.util.Scanner;
 
 public class LocalCLI {
-    public static void run(){
+    public static void run() {
         Scanner scanner = new Scanner(System.in);
         System.out.println(
-                "\n== * == Menu de Local == * ==\n"+
-                        "[1] Listar todos;\n"+
-                        "[2] Listar um;\n"+
-                        "[3] Incluir;\n"+
-                        "[4] Excluir;\n"+
-                        "[5] Editar;\n"+
+                "\n== * == Menu de Local == * ==\n" +
+                        "[1] Listar todos;\n" +
+                        "[2] Listar um;\n" +
+                        "[3] Incluir;\n" +
+                        "[4] Excluir;\n" +
+                        "[5] Editar;\n" +
                         "[6] Voltar\n"
         );
 
         System.out.printf("Digite sua opcao: ");
         String opcao = scanner.nextLine();
 
-        switch (opcao){
+        switch (opcao) {
             case "1":
                 listarTodosLocal.listarTodos();
                 break;

@@ -1,20 +1,24 @@
 package UseCases.LocalUseCases;
 
 import DAOs.localDAO;
-import DAOs.pragaDAO;
 import Entities.Local;
-import Entities.Praga;
 
 import java.util.Scanner;
 
 public class incluirLocal {
 
-    public static boolean incluir(){
+    public static boolean incluir() {
         Scanner scanner = new Scanner(System.in);
         Local local = new Local();
 
         System.out.printf("CEP: ");
-        local.setCEP_ponto_central(scanner.nextLine());
+        String CEP = scanner.nextLine();
+        while (localDAO.listarUmLocal(CEP) != null) {
+            System.out.println("\n** Este CEP já esta em uso no sistema!\n");
+            System.out.printf("CEP: ");
+            CEP = scanner.nextLine();
+        }
+        local.setCEP_ponto_central(CEP);
         System.out.printf("Raio: ");
         local.setRaio(scanner.nextInt());
         System.out.printf("População: ");

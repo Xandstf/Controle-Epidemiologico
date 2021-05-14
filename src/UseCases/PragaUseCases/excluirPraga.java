@@ -1,13 +1,12 @@
 package UseCases.PragaUseCases;
 
 import DAOs.pragaDAO;
-import Entities.Praga;
 
 import java.util.Scanner;
 
 public class excluirPraga {
 
-    public static void excluir(){
+    public static void excluir() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.printf("\nDigite o codigo da praga que deseja excluir: ");
@@ -16,28 +15,28 @@ public class excluirPraga {
         System.out.print("Você tem certeza que deseja excluir? (S/N): ");
         scanner.nextLine();
         String confirmacao = scanner.nextLine();
-        if(confirmacao.equals("S")){
-            if(pragaDAO.excluirPraga(codigo)){
+        if (confirmacao.equals("S")) {
+            if (pragaDAO.excluirPraga(codigo)) {
                 System.out.println("\n** Praga excluida com sucesso!");
-            }else{
+            } else {
                 System.out.println("\n** Praga não encontrada. Liste todas para obter seus respectivos codigos.");
             }
-        }else{
+        } else {
             System.out.println("\n** Ação cancelada!");
         }
     }
 
-    public static void excluir(int codigoPraga, String confirmacaoPraga){
+    public static void excluir(int codigoPraga, String confirmacaoPraga) {
         int codigo = codigoPraga;
         String confirmacao = confirmacaoPraga;
 
-        if(confirmacao.equals("S")){
-            if(pragaDAO.excluirPraga(codigo)){
+        if (confirmacao.equals("S")) {
+            if (pragaDAO.excluirPraga(codigo)) {
                 System.out.println("\n** Praga excluida com sucesso!");
-            }else{
+            } else {
                 System.out.println("\n** Praga não encontrada. Liste todas para obter seus respectivos codigos.");
             }
-        }else{
+        } else {
             System.out.println("\n** Ação cancelada!");
         }
     }

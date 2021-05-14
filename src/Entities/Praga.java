@@ -3,24 +3,24 @@ package Entities;
 public class Praga {
     private int codigo;
     private String nome;
-    private String Doencas_Transimitidas;
-    private String Tempo_Vida;
-    private String Modos_Combate;
+    private String doencas_Transimitidas;
+    private int tempo_Vida;
+    private String modos_Combate;
 
-    public Praga(int codigo, String nome, String doencas_Transimitidas, String tempo_Vida, String modos_Combate) {
+    public Praga(int codigo, String nome, String doencas_Transimitidas, int tempo_Vida, String modos_Combate) {
         this.codigo = codigo;
         this.nome = nome;
-        Doencas_Transimitidas = doencas_Transimitidas;
-        Tempo_Vida = tempo_Vida;
-        Modos_Combate = modos_Combate;
+        this.doencas_Transimitidas = doencas_Transimitidas;
+        this.tempo_Vida = tempo_Vida;
+        this.modos_Combate = modos_Combate;
     }
 
     public Praga() {
-        this.codigo = 0;
+        this.codigo = -1;
         this.nome = "";
-        Doencas_Transimitidas = "";
-        Tempo_Vida = "";
-        Modos_Combate = "";
+        this.doencas_Transimitidas = "";
+        this.tempo_Vida = 0;
+        this.modos_Combate = "";
     }
 
     public int getCodigo() {
@@ -40,26 +40,26 @@ public class Praga {
     }
 
     public String getDoencas_Transimitidas() {
-        return Doencas_Transimitidas;
+        return doencas_Transimitidas;
     }
 
     public void setDoencas_Transimitidas(String doencas_Transimitidas) {
-        Doencas_Transimitidas = doencas_Transimitidas;
+        this.doencas_Transimitidas = doencas_Transimitidas;
     }
 
-    public String getTempo_Vida() {
-        return Tempo_Vida;
+    public int getTempo_Vida() {
+        return tempo_Vida;
     }
 
-    public void setTempo_Vida(String tempo_Vida) {
-        Tempo_Vida = tempo_Vida;
+    public void setTempo_Vida(int tempo_Vida) {
+        this.tempo_Vida = tempo_Vida;
     }
 
     public String getModos_Combate() {
-        return Modos_Combate;
+        return modos_Combate;
     }
 
     public void setModos_Combate(String modos_Combate) {
-        Modos_Combate = modos_Combate;
+        this.modos_Combate = modos_Combate;
     }
 }

@@ -1,6 +1,5 @@
 import DAOs.localDAO;
 import DAOs.pragaDAO;
-import Entities.Praga;
 import View.LocalCLI;
 import View.PragaCLI;
 
@@ -17,16 +16,16 @@ public class App {
     private static void menuPrincipal() {
         Scanner scanner = new Scanner(System.in);
         System.out.println(
-                "\n== * == Menu do Sistema == * ==\n"+
-                "[1] Submenu de Local;\n"+
-                "[2] Submenu de Praga;\n"+
-                "[3] Sair\n"
+                "\n== * == Menu do Sistema == * ==\n" +
+                        "[1] Submenu de Local;\n" +
+                        "[2] Submenu de Praga;\n" +
+                        "[3] Sair\n"
         );
 
         System.out.printf("Digite sua opcao: ");
         String opcao = scanner.nextLine();
 
-        switch (opcao){
+        switch (opcao) {
             case "1":
                 LocalCLI.run();
                 menuPrincipal();
